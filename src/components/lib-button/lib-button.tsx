@@ -9,7 +9,7 @@ export class LibButton {
   render() {
     return (
       <Host>
-        <button type="button" class="btnPrimary">
+        <button type="button" class="btnSecondary">
           <slot></slot>
         </button>
       </Host>

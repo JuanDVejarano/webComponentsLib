@@ -10,6 +10,7 @@
   }
 
   %general {
+    font-family: 'openSans', sans-serif;
     border-radius: 8px;
     font-size: 18px;
     font-weight: 600;
@@ -20,17 +21,48 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    padding: 14px 18px;
   }
 
   .btnPrimary {
     @extend %general;
     background-color: $action-primary-default;
-    padding: 14px 18px;
     color: $inverted;
+
+    &:hover {
+      background-color: $action-primary-hover;
+    }
+
+    &:active {
+      background-color: $action-primary-active;
+    }
+
+    &:disabled {
+      background-color: $action-primary-disabled;
+      cursor: no-drop;
+    }
+  }
+
+  .btnSecondary {
+    @extend %general;
+    background-color: $action-secondary-default;
+    color: $inverted;
+
+    &:hover {
+      background-color: $action-secondary-hover;
+    }
+
+    &:active {
+      background-color: $action-secondary-active;
+    }
+
+    &:disabled {
+      background-color: $action-secondary-disabled;
+      cursor: no-drop;
+    }
   }
 }
 
 
-.btnSecondary {}
 
 .btnNeutral {}
