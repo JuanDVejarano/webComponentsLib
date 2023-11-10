@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface LibButton {
+        "btnSize": string;
+        "btnType": string;
     }
 }
 declare global {
@@ -22,6 +24,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface LibButton {
+        "btnSize"?: string;
+        "btnType"?: string;
     }
     interface IntrinsicElements {
         "lib-button": LibButton;

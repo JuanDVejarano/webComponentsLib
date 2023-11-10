@@ -1,5 +1,4 @@
 :host {
-  display: block;
 
   button {
     border: 0;
@@ -10,7 +9,7 @@
   }
 
   %general {
-    font-family: 'openSans', sans-serif;
+    font-family: $ffamily;
     border-radius: 8px;
     font-size: 18px;
     font-weight: 600;
@@ -28,6 +27,7 @@
     @extend %general;
     background-color: $action-primary-default;
     color: $inverted;
+    font-weight: normal;
 
     &:hover {
       background-color: $action-primary-hover;
@@ -40,6 +40,16 @@
     &:disabled {
       background-color: $action-primary-disabled;
       cursor: no-drop;
+    }
+
+    &--medium {
+      padding: 12px 16px;
+      font-size: 16px;
+    }
+
+    &--small {
+      padding: 8px 12px;
+      font-size: 14px;
     }
   }
 
@@ -61,8 +71,23 @@
       cursor: no-drop;
     }
   }
+
+  .btnNeutral {
+    @extend %general;
+    background-color: $action-neutral-default;
+    color: $inverted;
+
+    &:hover {
+      background-color: $action-neutral-hover;
+    }
+
+    &:active {
+      background-color: $action-neutral-active;
+    }
+
+    &:disabled {
+      background-color: $action-neutral-disabled;
+      cursor: no-drop;
+    }
+  }
 }
-
-
-
-.btnNeutral {}
