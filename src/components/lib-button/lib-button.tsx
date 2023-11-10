@@ -9,13 +9,14 @@ import { Component, Host, h, Prop } from '@stencil/core';
 export class LibButton {
   @Prop() btnType: string;
   @Prop() btnSize: string;
+  @Prop() disabled: boolean;
   btnClass: string;
 
   render() {
     this.selectionClass();
     return (
       <Host>
-        <button type="button" class={this.btnClass}>
+        <button type="button" class={this.btnClass} disabled={this.disabled}>
           <slot></slot>
         </button>
       </Host>
@@ -29,7 +30,7 @@ export class LibButton {
           case 'small':
             this.btnClass = 'btnPrimary--small';
             break;
-          case 'large':
+          case 'medium':
             this.btnClass = 'btnPrimary--medium';
             break;
           default:
@@ -42,7 +43,7 @@ export class LibButton {
           case 'small':
             this.btnClass = 'btnSecondary--small';
             break;
-          case 'large':
+          case 'medium':
             this.btnClass = 'btnSecondary--medium';
             break;
           default:
@@ -55,7 +56,7 @@ export class LibButton {
           case 'small':
             this.btnClass = 'btnNeutral--small';
             break;
-          case 'large':
+          case 'medium':
             this.btnClass = 'btnNeutral--medium';
             break;
           default:

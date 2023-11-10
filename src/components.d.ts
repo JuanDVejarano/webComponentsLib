@@ -9,6 +9,7 @@ export namespace Components {
     interface LibButton {
         "btnSize": string;
         "btnType": string;
+        "disabled": boolean;
     }
 }
 declare global {
@@ -26,6 +27,7 @@ declare namespace LocalJSX {
     interface LibButton {
         "btnSize"?: string;
         "btnType"?: string;
+        "disabled"?: boolean;
     }
     interface IntrinsicElements {
         "lib-button": LibButton;
