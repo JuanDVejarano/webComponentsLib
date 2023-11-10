@@ -1,3 +1,36 @@
 :host {
   display: block;
+
+  button {
+    border: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+  }
+
+  %general {
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.1px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btnPrimary {
+    @extend %general;
+    background-color: $action-primary-default;
+    padding: 14px 18px;
+    color: $inverted;
+  }
 }
+
+
+.btnSecondary {}
+
+.btnNeutral {}
