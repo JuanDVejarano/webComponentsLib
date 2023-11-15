@@ -7,9 +7,10 @@ import { Component, Host, h, Prop } from '@stencil/core';
   //shadow: true,
 })
 export class LibButton {
-  @Prop() btnType: string;
-  @Prop() btnSize: string;
-  @Prop() disabled: boolean;
+  @Prop() btnType: string; // primary, secondary, neutral
+  @Prop() btnSize: string; // small, medium, large
+  @Prop() btnCategory: string; // filled, ghost, borderless
+  @Prop() disabled: boolean; // true, false
   btnClass: string;
 
   render() {
@@ -24,49 +25,53 @@ export class LibButton {
   }
 
   selectionClass() {
+    let varClass: string = '';
     switch (this.btnType) {
       case 'primary':
-        switch (this.btnSize) {
-          case 'small':
-            this.btnClass = 'btnPrimary--small';
-            break;
-          case 'medium':
-            this.btnClass = 'btnPrimary--medium';
-            break;
-          default:
-            this.btnClass = 'btnPrimary';
-            break;
-        }
+        varClass = 'btnPrimary';
         break;
       case 'secondary':
-        switch (this.btnSize) {
-          case 'small':
-            this.btnClass = 'btnSecondary--small';
-            break;
-          case 'medium':
-            this.btnClass = 'btnSecondary--medium';
-            break;
-          default:
-            this.btnClass = 'btnSecondary';
-            break;
-        }
+        varClass = 'btnSecondary';
         break;
       case 'neutral':
-        switch (this.btnSize) {
-          case 'small':
-            this.btnClass = 'btnNeutral--small';
-            break;
-          case 'medium':
-            this.btnClass = 'btnNeutral--medium';
-            break;
-          default:
-            this.btnClass = 'btnNeutral';
-            break;
-        }
+        varClass = 'btnNeutral';
         break;
       default:
-        this.btnClass = 'btnPrimary';
+        varClass = 'btnPrimary';
         break;
     }
+    switch (this.btnCategory) {
+      case 'filled':
+        varClass += ' --filled';
+        break;
+      case 'ghost':
+        varClass += '--ghost';
+        break;
+      case 'borderless':
+        varClass += '--borderless';
+        break;
+      case 'round':
+        varClass += '--round';
+        break;
+      default:
+        varClass += '--filled';
+        break;
+    }
+    switch (this.btnSize) {
+      case 'small':
+        varClass += 'Small';
+        break;
+      case 'medium':
+        varClass += 'Medium';
+        break;
+      case 'large':
+        varClass += 'Large';
+        break;
+      default:
+        varClass += 'Medium';
+        break;
+    }
+
+    this.btnClass = varClass;
   }
 }

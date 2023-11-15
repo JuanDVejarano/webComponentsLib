@@ -23,8 +23,17 @@
     padding: 14px 18px;
   }
 
-  .btnPrimary {
-    @extend %general;
+  %small {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  %medium {
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+
+  %filledPrimary {
     background-color: $action-primary-default;
     color: $inverted;
     font-weight: normal;
@@ -41,17 +50,95 @@
       background-color: $action-primary-disabled;
       cursor: no-drop;
     }
+  }
 
-    &--medium {
-      @extend .btnPrimary;
-      padding: 12px 16px;
-      font-size: 16px;
+  %ghostPrimary {
+    background-color: $inverted;
+    color: $action-primary-default;
+    border: 2px solid $action-primary-default;
+
+    &:hover {
+      border-color: $action-primary-hover;
+      color: $action-primary-hover;
+      background-color: $inverted;
     }
 
-    &--small {
+    &:active {
+      border-color: $action-primary-active;
+      color: $action-primary-active;
+      background-color: $inverted;
+    }
+
+    &:disabled {
+      border-color: $action-primary-disabled;
+      color: $action-primary-disabled;
+      background-color: $inverted;
+      cursor: no-drop;
+    }
+  }
+
+  %borderless {
+    background-color: $inverted;
+    color: $action-primary-default;
+    border: 2px solid $action-primary-default;
+
+    &:hover {
+      border-color: $action-primary-hover;
+      color: $action-primary-hover;
+      background-color: $inverted;
+    }
+
+    &:active {
+      border-color: $action-primary-active;
+      color: $action-primary-active;
+      background-color: $inverted;
+    }
+
+    &:disabled {
+      border-color: $action-primary-disabled;
+      color: $action-primary-disabled;
+      background-color: $inverted;
+      cursor: no-drop;
+    }
+  }
+
+
+
+  .btnPrimary {
+    @extend %general;
+
+    &--filledSmall {
       @extend .btnPrimary;
-      padding: 8px 12px;
-      font-size: 14px;
+      @extend %filledPrimary;
+      @extend %small;
+    }
+
+    &--filledMedium {
+      @extend .btnPrimary;
+      @extend %filledPrimary;
+      @extend %medium;
+    }
+
+    &--filledLarge {
+      @extend .btnPrimary;
+      @extend %filledPrimary;
+    }
+
+    &--ghostSmall {
+      @extend .btnPrimary;
+      @extend %small;
+      @extend %ghostPrimary;
+    }
+
+    &--ghostMedium {
+      @extend .btnPrimary;
+      @extend %medium;
+      @extend %ghostPrimary;
+    }
+
+    &--ghostLarge {
+      @extend .btnPrimary;
+      @extend %ghostPrimary;
     }
   }
 
@@ -73,17 +160,7 @@
       cursor: no-drop;
     }
 
-    &--medium {
-      @extend .btnSecondary;
-      padding: 12px 16px;
-      font-size: 16px;
-    }
 
-    &--small {
-      @extend .btnSecondary;
-      padding: 8px 12px;
-      font-size: 14px;
-    }
   }
 
   .btnNeutral {
@@ -102,18 +179,6 @@
     &:disabled {
       background-color: $action-neutral-disabled;
       cursor: no-drop;
-    }
-
-    &--medium {
-      @extend .btnNeutral;
-      padding: 12px 16px;
-      font-size: 16px;
-    }
-
-    &--small {
-      @extend .btnNeutral;
-      padding: 8px 12px;
-      font-size: 14px;
     }
   }
 }
