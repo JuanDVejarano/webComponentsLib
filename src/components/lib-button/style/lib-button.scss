@@ -1,0 +1,184 @@
+:host {
+
+  button {
+    border: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+  }
+
+  %general {
+    font-family: $ffamily;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.1px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    padding: 14px 18px;
+  }
+
+  %small {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  %medium {
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+
+  %filledPrimary {
+    background-color: $action-primary-default;
+    color: $inverted;
+    font-weight: normal;
+
+    &:hover {
+      background-color: $action-primary-hover;
+    }
+
+    &:active {
+      background-color: $action-primary-active;
+    }
+
+    &:disabled {
+      background-color: $action-primary-disabled;
+      cursor: no-drop;
+    }
+  }
+
+  %ghostPrimary {
+    background-color: $inverted;
+    color: $action-primary-default;
+    border: 2px solid $action-primary-default;
+
+    &:hover {
+      border-color: $action-primary-hover;
+      color: $action-primary-hover;
+      background-color: $inverted;
+    }
+
+    &:active {
+      border-color: $action-primary-active;
+      color: $action-primary-active;
+      background-color: $inverted;
+    }
+
+    &:disabled {
+      border-color: $action-primary-disabled;
+      color: $action-primary-disabled;
+      background-color: $inverted;
+      cursor: no-drop;
+    }
+  }
+
+  %borderless {
+    background-color: $inverted;
+    color: $action-primary-default;
+    border: 2px solid $action-primary-default;
+
+    &:hover {
+      border-color: $action-primary-hover;
+      color: $action-primary-hover;
+      background-color: $inverted;
+    }
+
+    &:active {
+      border-color: $action-primary-active;
+      color: $action-primary-active;
+      background-color: $inverted;
+    }
+
+    &:disabled {
+      border-color: $action-primary-disabled;
+      color: $action-primary-disabled;
+      background-color: $inverted;
+      cursor: no-drop;
+    }
+  }
+
+
+
+  .btnPrimary {
+    @extend %general;
+
+    &--filledSmall {
+      @extend .btnPrimary;
+      @extend %filledPrimary;
+      @extend %small;
+    }
+
+    &--filledMedium {
+      @extend .btnPrimary;
+      @extend %filledPrimary;
+      @extend %medium;
+    }
+
+    &--filledLarge {
+      @extend .btnPrimary;
+      @extend %filledPrimary;
+    }
+
+    &--ghostSmall {
+      @extend .btnPrimary;
+      @extend %small;
+      @extend %ghostPrimary;
+    }
+
+    &--ghostMedium {
+      @extend .btnPrimary;
+      @extend %medium;
+      @extend %ghostPrimary;
+    }
+
+    &--ghostLarge {
+      @extend .btnPrimary;
+      @extend %ghostPrimary;
+    }
+  }
+
+  .btnSecondary {
+    @extend %general;
+    background-color: $action-secondary-default;
+    color: $inverted;
+
+    &:hover {
+      background-color: $action-secondary-hover;
+    }
+
+    &:active {
+      background-color: $action-secondary-active;
+    }
+
+    &:disabled {
+      background-color: $action-secondary-disabled;
+      cursor: no-drop;
+    }
+
+
+  }
+
+  .btnNeutral {
+    @extend %general;
+    background-color: $action-neutral-default;
+    color: $inverted;
+
+    &:hover {
+      background-color: $action-neutral-hover;
+    }
+
+    &:active {
+      background-color: $action-neutral-active;
+    }
+
+    &:disabled {
+      background-color: $action-neutral-disabled;
+      cursor: no-drop;
+    }
+  }
+}

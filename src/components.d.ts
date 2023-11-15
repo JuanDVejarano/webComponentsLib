@@ -6,56 +6,40 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface LibButton {
+        "btnCategory": string;
+        "btnSize": string;
+        "btnType": string;
+        "disabled": boolean;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLLibButtonElement extends Components.LibButton, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLLibButtonElement: {
+        prototype: HTMLLibButtonElement;
+        new (): HTMLLibButtonElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "lib-button": HTMLLibButtonElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface LibButton {
+        "btnCategory"?: string;
+        "btnSize"?: string;
+        "btnType"?: string;
+        "disabled"?: boolean;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "lib-button": LibButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "lib-button": LocalJSX.LibButton & JSXBase.HTMLAttributes<HTMLLibButtonElement>;
         }
     }
 }
