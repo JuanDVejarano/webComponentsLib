@@ -12,6 +12,41 @@
 
 <body>
 
+  <style>
+    table {
+      margin: auto;
+      margin-top: 10px;
+      border-collapse: collapse;
+      font-family: Tahoma, Geneva, sans-serif;
+    }
+
+    table td {
+      padding: 15px;
+    }
+
+    table thead th {
+      background-color: #54585d;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 13px;
+      border: 1px solid #54585d;
+    }
+
+    table tbody td {
+      color: #636363;
+      border: 1px solid #dddfe1;
+    }
+
+    table tbody tr {
+      background-color: #f9fafb;
+    }
+
+    table tbody tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+  </style>
+
   <h3>Butons filled</h3>
   <div>
     <lib-button btn-type="primary" btn-size="large">Large Button</lib-button>
@@ -95,6 +130,35 @@
     <lib-button btn-type="neutral" btn-size="medium" btn-category="round">medium Button</lib-button>
     <lib-button btn-type="neutral" btn-size="small" btn-category="round">Small Button</lib-button>
   </div>
+
+  <table>
+    <thead>
+      <th>atributo</th>
+      <th>valor</th>
+      <th>descripcion</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>btn-type</td>
+        <td>primary | secondary | neutral</td>
+        <td>tipo de boton</td>
+      </tr>
+      <tr>
+        <td>btn-size</td>
+        <td>large | medium | small</td>
+        <td>tamaño del boton</td>
+      </tr>
+      <tr>
+        <td>btn-category</td>
+        <td>filled | ghost | borderless | round</td>
+        <td>tipo de boton</td>
+      </tr>
+      <tr>
+        <td>disabled</td>
+        <td>true | false</td>
+        <td>habilita o deshabilita el boton</td>
+    </tbody>
+  </table>
 </body>
 
 </html>
