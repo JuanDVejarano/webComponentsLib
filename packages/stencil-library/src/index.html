@@ -1,14 +1,166 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/stencil-library.esm.js"></script>
-    <script nomodule src="/build/stencil-library.js"></script>
-  </head>
-  <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/stencil-library.esm.js"></script>
+  <script nomodule src="/build/stencil-library.js"></script>
+</head>
+
+<body>
+  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <style>
+    table {
+      margin: auto;
+      margin-top: 10px;
+      border-collapse: collapse;
+      font-family: Tahoma, Geneva, sans-serif;
+    }
+
+    table td {
+      padding: 15px;
+    }
+
+    table thead th {
+      background-color: #54585d;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 13px;
+      border: 1px solid #54585d;
+    }
+
+    table tbody td {
+      color: #636363;
+      border: 1px solid #dddfe1;
+    }
+
+    table tbody tr {
+      background-color: #f9fafb;
+    }
+
+    table tbody tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+  </style>
+
+  <h3>Butons filled</h3>
+  <div>
+    <lib-button btn-type="primary" btn-size="large">Large Button</lib-button>
+    <lib-button btn-type="primary" btn-size="large" disabled="true">disabled Button</lib-button>
+    <lib-button btn-type="primary" btn-size="medium">medium Button</lib-button>
+    <lib-button btn-type="primary" btn-size="small">Small Button</lib-button>
+  </div>
+  <div>
+    <lib-button btn-type="secondary" btn-size="large">Large Button</lib-button>
+    <lib-button btn-type="secondary" btn-size="large" disabled="true">disabled Button</lib-button>
+    <lib-button btn-type="secondary" btn-size="medium" btn-size="medium">medium Button</lib-button>
+    <lib-button btn-type="secondary" btn-size="small" btn-size="small">Small Button</lib-button>
+  </div>
+  <div>
+    <lib-button btn-type="neutral" btn-size="large">Large Button</lib-button>
+    <lib-button btn-type="neutral" btn-size="large" disabled="true">disabled Button</lib-button>
+    <lib-button btn-type="neutral" btn-size="medium" btn-size="medium">medium Button</lib-button>
+    <lib-button btn-type="neutral" btn-size="small" btn-size="small">Small Button</lib-button>
+  </div>
+
+  <h3>Butons Ghost</h3>
+  <div>
+    <lib-button btn-type="primary" btn-size="large" btn-category="ghost">Large Button</lib-button>
+    <lib-button btn-type="primary" btn-size="large" btn-category="ghost" disabled="true">disabled Button</lib-button>
+    <lib-button btn-type="primary" btn-size="medium" btn-category="ghost">medium Button</lib-button>
+    <lib-button btn-type="primary" btn-size="small" btn-category="ghost">Small Button</lib-button>
+  </div>
+  <div>
+    <lib-button btn-type="secondary" btn-size="large" btn-category="ghost">Large Button</lib-button>
+    <lib-button btn-type="secondary" btn-size="large" btn-category="ghost" disabled="true">disabled Button
+    </lib-button>
+    <lib-button btn-type="secondary" btn-size="medium" btn-category="ghost">medium Button</lib-button>
+    <lib-button btn-type="secondary" btn-size="small" btn-category="ghost">Small Button</lib-button>
+  </div>
+  <div>
+    <lib-button btn-type="neutral" btn-size="large" btn-category="ghost">Large Button</lib-button>
+    <lib-button btn-type="neutral" btn-size="large" btn-category="ghost" disabled="true">disabled Button</lib-button>
+    <lib-button btn-type="neutral" btn-size="medium" btn-category="ghost">medium Button</lib-button>
+    <lib-button btn-type="neutral" btn-size="small" btn-category="ghost">Small Button</lib-button>
+  </div>
+
+  <h3>Butons Borderless</h3>
+  <div>
+    <lib-button btn-type="primary" btn-size="large" btn-category="borderless">Large Button</lib-button>
+    <lib-button btn-type="primary" btn-size="large" btn-category="borderless" disabled="true">disabled Button
+    </lib-button>
+    <lib-button btn-type="primary" btn-size="medium" btn-category="borderless">medium Button</lib-button>
+    <lib-button btn-type="primary" btn-size="small" btn-category="borderless">Small Button</lib-button>
+  </div>
+
+  <div>
+    <lib-button btn-type="secondary" btn-size="large" btn-category="borderless">Large Button</lib-button>
+    <lib-button btn-type="secondary" btn-size="large" btn-category="borderless" disabled="true">disabled Button
+    </lib-button>
+    <lib-button btn-type="secondary" btn-size="medium" btn-category="borderless">medium Button</lib-button>
+    <lib-button btn-type="secondary" btn-size="small" btn-category="borderless">Small Button</lib-button>
+  </div>
+  <div>
+    <lib-button btn-type="neutral" btn-size="large" btn-category="borderless">Large Button</lib-button>
+    <lib-button btn-type="neutral" btn-size="large" btn-category="borderless" disabled="true">disabled Button
+    </lib-button>
+    <lib-button btn-type="neutral" btn-size="medium" btn-category="borderless">medium Button</lib-button>
+    <lib-button btn-type="neutral" btn-size="small" btn-category="borderless">Small Button</lib-button>
+  </div>
+
+  <h3>Butons round</h3>
+  <div>
+    <lib-button btn-type="primary" btn-size="large" btn-category="round">Large Button</lib-button>
+    <lib-button btn-type="primary" btn-size="large" btn-category="round" disabled="true">disabled Button</lib-button>
+    <lib-button btn-type="primary" btn-size="medium" btn-category="round">medium Button</lib-button>
+    <lib-button btn-type="primary" btn-size="small" btn-category="round">Small Button</lib-button>
+  </div>
+  <div>
+    <lib-button btn-type="secondary" btn-size="large" btn-category="round">Large Button</lib-button>
+    <lib-button btn-type="secondary" btn-size="large" btn-category="round" disabled="true">disabled Button
+    </lib-button>
+    <lib-button btn-type="secondary" btn-size="medium" btn-category="round">medium Button</lib-button>
+    <lib-button btn-type="secondary" btn-size="small" btn-category="round">Small Button</lib-button>
+  </div>
+  <div>
+    <lib-button btn-type="neutral" btn-size="large" btn-category="round">Large Button</lib-button>
+    <lib-button btn-type="neutral" btn-size="large" btn-category="round" disabled="true">disabled Button</lib-button>
+    <lib-button btn-type="neutral" btn-size="medium" btn-category="round">medium Button</lib-button>
+    <lib-button btn-type="neutral" btn-size="small" btn-category="round">Small Button</lib-button>
+  </div>
+
+  <table>
+    <thead>
+      <th>atributo</th>
+      <th>valor</th>
+      <th>descripcion</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>btn-type</td>
+        <td>primary | secondary | neutral</td>
+        <td>tipo de boton</td>
+      </tr>
+      <tr>
+        <td>btn-size</td>
+        <td>large | medium | small</td>
+        <td>tamaño del boton</td>
+      </tr>
+      <tr>
+        <td>btn-category</td>
+        <td>filled | ghost | borderless | round</td>
+        <td>tipo de boton</td>
+      </tr>
+      <tr>
+        <td>disabled</td>
+        <td>true | false</td>
+        <td>habilita o deshabilita el boton</td>
+    </tbody>
+  </table>
+</body>
+
 </html>
