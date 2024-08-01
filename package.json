@@ -13,7 +13,6 @@
     "typescript": "^5.5.4"
   },
   "scripts": {
-    "prepare": "husky",
     "build": "lerna run build --stream"
   }
 }
