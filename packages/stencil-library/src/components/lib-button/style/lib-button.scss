@@ -1,0 +1,476 @@
+:host {
+
+  button {
+    border: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+  }
+
+  %general {
+    font-family: $ffamily;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.1px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    padding: 14px 18px;
+  }
+
+  // tamanños
+  %small {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  %medium {
+    padding: 12px 16px;
+    font-size: 16px;
+  }
+
+  // tipos buton primarios
+  %filledPrimary {
+    background-color: $action-primary-default;
+    color: $inverted;
+
+    &:hover {
+      background-color: $action-primary-hover;
+    }
+
+    &:active {
+      background-color: $action-primary-active;
+    }
+
+    &:disabled {
+      background-color: $action-primary-disabled;
+      cursor: no-drop;
+    }
+  }
+
+  %ghostPrimary {
+    background-color: $inverted;
+    color: $action-primary-default;
+    border: 2px solid $action-primary-default;
+
+    &:hover {
+      border-color: $action-primary-hover;
+      color: $action-primary-hover;
+      background-color: $inverted;
+    }
+
+    &:active {
+      border-color: $action-primary-active;
+      color: $action-primary-active;
+      background-color: $inverted;
+    }
+
+    &:disabled {
+      border-color: $action-primary-disabled;
+      color: $action-primary-disabled;
+      background-color: $inverted;
+      cursor: no-drop;
+    }
+  }
+
+  %borderlessPrimary {
+    background-color: $inverted;
+    color: $action-primary-default;
+    border: 1px solid transparent;
+
+    &:hover {
+      border-color: $action-primary-hover;
+      color: $action-primary-hover;
+      background-color: $inverted;
+    }
+
+    &:active {
+      border-color: $action-primary-active;
+      color: $action-primary-active;
+      background-color: $inverted;
+    }
+
+    &:disabled {
+      color: $action-primary-disabled;
+      background-color: $inverted;
+      cursor: no-drop;
+    }
+  }
+
+  // tipos buton secundarios
+  %filledSecondary {
+    background-color: $action-secondary-default;
+    color: $inverted;
+
+    &:hover {
+      background-color: $action-secondary-hover;
+    }
+
+    &:active {
+      background-color: $action-secondary-active;
+    }
+
+    &:disabled {
+      background-color: $action-secondary-disabled;
+      cursor: no-drop;
+    }
+  }
+
+  %ghostSecondary {
+    background-color: $inverted;
+    color: $action-secondary-default;
+    border: 2px solid $action-secondary-default;
+
+    &:hover {
+      border-color: $action-secondary-hover;
+      color: $action-secondary-hover;
+      background-color: $inverted;
+    }
+
+    &:active {
+      border-color: $action-secondary-active;
+      color: $action-secondary-active;
+      background-color: $inverted;
+    }
+
+    &:disabled {
+      border-color: $action-secondary-disabled;
+      color: $action-secondary-disabled;
+      background-color: $inverted;
+      cursor: no-drop;
+    }
+  }
+
+  %borderlessSecondary {
+    background-color: $inverted;
+    color: $action-secondary-default;
+    border: 1px solid transparent;
+
+    &:hover {
+      border-color: $action-secondary-hover;
+      color: $action-secondary-hover;
+      background-color: $inverted;
+    }
+
+    &:active {
+      border-color: $action-secondary-active;
+      color: $action-secondary-active;
+      background-color: $inverted;
+    }
+
+    &:disabled {
+      color: $action-secondary-disabled;
+      background-color: $inverted;
+      cursor: no-drop;
+    }
+  }
+
+  // tipos buton neutrales
+  %filledNeutral {
+    background-color: $action-neutral-default;
+    color: $inverted;
+
+    &:hover {
+      background-color: $action-neutral-hover;
+    }
+
+    &:active {
+      background-color: $action-neutral-active;
+    }
+
+    &:disabled {
+      background-color: $action-neutral-disabled;
+      cursor: no-drop;
+    }
+  }
+
+  %ghostNeutral {
+    background-color: $inverted;
+    color: $action-neutral-default;
+    border: 2px solid $action-neutral-default;
+
+    &:hover {
+      border-color: $action-neutral-hover;
+      color: $action-neutral-hover;
+      background-color: $inverted;
+    }
+
+    &:active {
+      border-color: $action-neutral-active;
+      color: $action-neutral-active;
+      background-color: $inverted;
+    }
+
+    &:disabled {
+      border-color: $action-neutral-disabled;
+      color: $action-neutral-disabled;
+      background-color: $inverted;
+      cursor: no-drop;
+    }
+  }
+
+  %borderlessNeutral {
+    background-color: $inverted;
+    color: $action-neutral-default;
+    border: 1px solid transparent;
+
+    &:hover {
+      border-color: $action-neutral-hover;
+      color: $action-neutral-hover;
+      background-color: $inverted;
+    }
+
+    &:active {
+      border-color: $action-neutral-active;
+      color: $action-neutral-active;
+      background-color: $inverted;
+    }
+
+    &:disabled {
+      color: $action-neutral-disabled;
+      background-color: $inverted;
+      cursor: no-drop;
+    }
+  }
+
+  // round
+  %round {
+    border-radius: 32px;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.24);
+  }
+
+  // Clases botones primarios
+  .btnPrimary {
+    @extend %general;
+
+    &--filledSmall {
+      @extend .btnPrimary;
+      @extend %filledPrimary;
+      @extend %small;
+    }
+
+    &--filledMedium {
+      @extend .btnPrimary;
+      @extend %filledPrimary;
+      @extend %medium;
+    }
+
+    &--filledLarge {
+      @extend .btnPrimary;
+      @extend %filledPrimary;
+    }
+
+    &--ghostSmall {
+      @extend .btnPrimary;
+      @extend %small;
+      @extend %ghostPrimary;
+    }
+
+    &--ghostMedium {
+      @extend .btnPrimary;
+      @extend %medium;
+      @extend %ghostPrimary;
+    }
+
+    &--ghostLarge {
+      @extend .btnPrimary;
+      @extend %ghostPrimary;
+    }
+
+    &--borderlessSmall {
+      @extend .btnPrimary;
+      @extend %small;
+      @extend %borderlessPrimary;
+    }
+
+    &--borderlessMedium {
+      @extend .btnPrimary;
+      @extend %medium;
+      @extend %borderlessPrimary;
+    }
+
+    &--borderlessLarge {
+      @extend .btnPrimary;
+      @extend %borderlessPrimary;
+    }
+
+    &--roundSmall {
+      @extend .btnPrimary;
+      @extend %filledPrimary;
+      @extend %small;
+      @extend %round;
+    }
+
+    &--roundMedium {
+      @extend .btnPrimary;
+      @extend %filledPrimary;
+      @extend %medium;
+      @extend %round;
+    }
+
+    &--roundLarge {
+      @extend .btnPrimary;
+      @extend %filledPrimary;
+      @extend %round;
+    }
+  }
+
+  // Clases botones secundarios
+  .btnSecondary {
+    @extend %general;
+
+    &--filledSmall {
+      @extend .btnSecondary;
+      @extend %filledSecondary;
+      @extend %small;
+    }
+
+    &--filledMedium {
+      @extend .btnSecondary;
+      @extend %filledSecondary;
+      @extend %medium;
+    }
+
+    &--filledLarge {
+      @extend .btnSecondary;
+      @extend %filledSecondary;
+    }
+
+    &--ghostSmall {
+      @extend .btnSecondary;
+      @extend %small;
+      @extend %ghostSecondary;
+    }
+
+    &--ghostMedium {
+      @extend .btnSecondary;
+      @extend %medium;
+      @extend %ghostSecondary;
+    }
+
+    &--ghostLarge {
+      @extend .btnSecondary;
+      @extend %ghostSecondary;
+    }
+
+    &--borderlessSmall {
+      @extend .btnSecondary;
+      @extend %small;
+      @extend %borderlessSecondary;
+    }
+
+    &--borderlessMedium {
+      @extend .btnSecondary;
+      @extend %medium;
+      @extend %borderlessSecondary;
+    }
+
+    &--borderlessLarge {
+      @extend .btnSecondary;
+      @extend %borderlessSecondary;
+    }
+
+    &--roundSmall {
+      @extend .btnSecondary;
+      @extend %filledSecondary;
+      @extend %small;
+      @extend %round;
+    }
+
+    &--roundMedium {
+      @extend .btnSecondary;
+      @extend %filledSecondary;
+      @extend %medium;
+      @extend %round;
+    }
+
+    &--roundLarge {
+      @extend .btnSecondary;
+      @extend %filledSecondary;
+      @extend %round;
+    }
+
+  }
+
+  // Clases botones neutrales
+  .btnNeutral {
+    @extend %general;
+
+    &--filledSmall {
+      @extend .btnNeutral;
+      @extend %filledNeutral;
+      @extend %small;
+    }
+
+    &--filledMedium {
+      @extend .btnNeutral;
+      @extend %filledNeutral;
+      @extend %medium;
+    }
+
+    &--filledLarge {
+      @extend .btnNeutral;
+      @extend %filledNeutral;
+    }
+
+    &--ghostSmall {
+      @extend .btnNeutral;
+      @extend %small;
+      @extend %ghostNeutral;
+    }
+
+    &--ghostMedium {
+      @extend .btnNeutral;
+      @extend %medium;
+      @extend %ghostNeutral;
+    }
+
+    &--ghostLarge {
+      @extend .btnNeutral;
+      @extend %ghostNeutral;
+    }
+
+    &--borderlessSmall {
+      @extend .btnNeutral;
+      @extend %small;
+      @extend %borderlessNeutral;
+    }
+
+    &--borderlessMedium {
+      @extend .btnNeutral;
+      @extend %medium;
+      @extend %borderlessNeutral;
+    }
+
+    &--borderlessLarge {
+      @extend .btnNeutral;
+      @extend %borderlessNeutral;
+    }
+
+    &--roundSmall {
+      @extend .btnNeutral;
+      @extend %filledNeutral;
+      @extend %small;
+      @extend %round;
+    }
+
+    &--roundMedium {
+      @extend .btnNeutral;
+      @extend %filledNeutral;
+      @extend %medium;
+      @extend %round;
+    }
+
+    &--roundLarge {
+      @extend .btnNeutral;
+      @extend %filledNeutral;
+      @extend %round;
+    }
+
+  }
+}

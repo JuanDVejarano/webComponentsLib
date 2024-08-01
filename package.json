@@ -13,5 +13,6 @@
     "typescript": "^5.5.4"
   },
   "scripts": {
+    "build": "lerna run build --stream"
   }
 }
