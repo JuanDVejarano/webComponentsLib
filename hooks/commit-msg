@@ -1,0 +1,19 @@
+#!/bin/sh
+
+commit_msg_file=$1
+
+# Leer el contenido del archivo de mensaje de commit
+commit_msg=$(cat "$commit_msg_file")
+
+# Expresión regular para validar la sintaxis de conventional commits
+conventional_commit_regex="^(feat|fix|docs|style|refactor|test|chore|ci)(\(.+\))?: .+"
+
+# Verificar si el mensaje de commit coincide con la sintaxis de conventional commits
+if ! echo "$commit_msg" | grep -qE "$conventional_commit_regex"; then
+    echo "Error: El mensaje de commit no sigue la sintaxis de conventional commits."
+    echo "Por favor, asegúrate de seguir el formato 'tipo(scope): descripción'."
+    exit 1
+fi
+
+echo "El mensaje de commit sigue la sintaxis de conventional commits."
+exit 0
