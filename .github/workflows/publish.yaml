@@ -26,6 +26,10 @@ jobs:
                   cd packages/stencil-library
                   npm run build
 
+            - name: Configure npm for authentication
+              run: |
+                  echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
             - name: Publish Stencil library to npm
               run: |
                   cd packages/stencil-library
