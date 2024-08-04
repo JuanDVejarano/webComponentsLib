@@ -26,26 +26,9 @@ jobs:
                   cd packages/stencil-library
                   npm run build
 
-            - name: Install dependencies React library
-              run: |
-                  cd packages/react-library
-                  npm ci
-
-            - name: Build React library
-              run: |
-                  cd packages/react-library
-                  npm run build
-
             - name: Publish Stencil library to npm
               run: |
                   cd packages/stencil-library
-                  npm publish
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-            - name: Publish React library to npm
-              run: |
-                  cd packages/react-library
                   npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
