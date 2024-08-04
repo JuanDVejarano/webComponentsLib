@@ -18,8 +18,13 @@ jobs:
               with:
                   node-version: 16
 
-            - name: Install dependencies
+            - name: Install dependencies Global
               run: npm ci
+
+            - name: Install dependencies StencillJs
+              run: |
+                  cd packages/stencil-library
+                  npm ci
 
             - name: Build library
               run: npm run build
