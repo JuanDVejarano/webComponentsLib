@@ -23,7 +23,7 @@ jobs:
 
             - name: Build Stencil library
               run: |
-                  cd packages/stencil-library
+                  cd packages/react-library
                   npm run build
 
             - name: Configure npm for authentication
@@ -32,7 +32,7 @@ jobs:
 
             - name: Publish Stencil library to npm
               run: |
-                  cd packages/stencil-library
+                  cd packages/react-library
                   npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
