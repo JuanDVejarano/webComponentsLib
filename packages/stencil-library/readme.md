@@ -8,6 +8,20 @@ Stencil is also great for building entire apps. For that, use the [stencil-app-s
 
 # Stencil
 
+# Install Library
+
+## Vamilla
+
+```bash
+npm install npm i @juandvejarano/webcomponentslib
+```
+
+## React
+
+```bash
+npm install npm i @juandvejarano/webcomponentslib-react
+```
+
 Stencil is a compiler for building fast web apps using Web Components.
 
 Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than runtime tool. Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements v1 spec.
@@ -99,10 +113,7 @@ function App() {
   return (
     <>
       <div>
-        <my-component
-          first="Stencil"
-          last="'Don't call me a framework' JS"
-        ></my-component>
+        <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
       </div>
     </>
   );
