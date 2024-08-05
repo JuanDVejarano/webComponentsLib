@@ -21,11 +21,6 @@ jobs:
             - name: Install dependencies Global
               run: npm ci
 
-            - name: Build Stencil library
-              run: |
-                  cd packages/react-library
-                  npm run build
-
             - name: Configure npm for authentication
               run: |
                   echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
