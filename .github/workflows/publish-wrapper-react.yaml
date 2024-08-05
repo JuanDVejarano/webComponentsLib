@@ -25,7 +25,7 @@ jobs:
               run: |
                   echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
-            - name: Publish Stencil library to npm
+            - name: Publish Stencil library React to npm
               run: |
                   cd packages/react-library
                   npm publish
