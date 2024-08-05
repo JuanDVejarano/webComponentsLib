@@ -33,13 +33,13 @@ jobs:
             - name: Publish Stencil library to npm
               run: |
                   cd packages/stencil-library
-                  npm publish
+                  npm publish --access public
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
             - name: Publish Stencil library React to npm
               run: |
                   cd packages/react-library
-                  npm publish
+                  npm publish --access public
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
