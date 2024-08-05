@@ -14,6 +14,9 @@
   },
   "scripts": {
     "build": "lerna run build --stream",
-    "prepare": "husky"
+    "prepare": "husky",
+    "patch": "lerna version patch --yes",
+    "minor": "lerna version minor --yes",
+    "major": "lerna version major --yes"
   }
 }
