@@ -22,9 +22,7 @@ jobs:
               run: npm ci
 
             - name: Build Stencil library
-              run: |
-                  cd packages/stencil-library
-                  npm run build
+              run: npm run build
 
             - name: Configure npm for authentication
               run: |
