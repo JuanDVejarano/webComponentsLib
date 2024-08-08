@@ -6,14 +6,16 @@ from datetime import datetime
 # Inicializar el repositorio
 repo = git.Repo('.')
 
-# Obtener todos los tags (versiones)
-tags = sorted(repo.tags, key=lambda t: t.commit.committed_datetime)
+# Obtener todos los tags (versiones) y ordenarlos de forma inversa
+tags = sorted(repo.tags, key=lambda t: t.commit.committed_datetime, reverse=True)
 
 # Agrupar commits por versión
 commits_by_version = defaultdict(list)
-for tag in tags:
-    version = tag.name
-    commits = list(repo.iter_commits(f'{tag}..{tag.commit}'))
+
+# Obtener commits entre cada par de tags consecutivos
+for i in range(len(tags)):
+    commits = list(repo.iter_commits(f'{tags[i].commit.hexsha}'))
+    version = tags[i].name
     commits_by_version[version].extend(commits)
 
 # Generar el contenido del CHANGELOG.md
