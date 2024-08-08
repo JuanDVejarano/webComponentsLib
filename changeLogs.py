@@ -1,5 +1,4 @@
 import git
-import semver
 from collections import defaultdict
 from datetime import datetime
 
@@ -14,7 +13,12 @@ commits_by_version = defaultdict(list)
 
 # Obtener commits entre cada par de tags consecutivos
 for i in range(len(tags)):
-    commits = list(repo.iter_commits(f'{tags[i].commit.hexsha}'))
+    if i == len(tags) - 1:
+        # Commits antes del primer tag
+        commits = list(repo.iter_commits(f'{tags[i].commit.hexsha}'))
+    else:
+        # Commits entre tags consecutivos
+        commits = list(repo.iter_commits(f'{tags[i+1].commit.hexsha}..{tags[i].commit.hexsha}'))
     version = tags[i].name
     commits_by_version[version].extend(commits)
 
