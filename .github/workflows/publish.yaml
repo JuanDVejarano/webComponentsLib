@@ -32,7 +32,7 @@ jobs:
                   npm run build
             
             
-    publishStencil:
+    publish_stencil:
         runs-on: publishStencil
 
         steps:
@@ -48,14 +48,14 @@ jobs:
                       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 
-    publishReact:
+    publish_react:
         runs-on: publishReact
 
         steps:
             - name: Configure npm for authentication
                   run: |
                       echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-    
+
             - name: Publish Stencil library React to npm
                   run: |
                       cd packages/react-library
