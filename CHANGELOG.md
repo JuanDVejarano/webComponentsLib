@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## v0.1.6
+- 2024-08-07 - v0.1.6 (3d9b3ed)
+- 2024-08-07 - docs(Global): :memo: Agregar change logs
+
+Se agrega el archivo pyton para crear los change logs (ef5a96f)
+- 2024-08-07 - Merge pull request #62 from JuanDVejarano/pruebasChageLogs
+
+Pruebas change logs (70b4624)
+
 ## v0.1.5
 - 2024-08-07 - v0.1.5 (9fd01ec)
 - 2024-08-07 - docs(Global): :memo: Change logs
