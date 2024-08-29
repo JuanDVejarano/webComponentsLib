@@ -48,7 +48,7 @@ Se debe seguir los commits semanticos para esto se recomienda usar la extension 
 
 1.3. Hacer el push
 
-Si aun no se va  a hacer un pr a la rama staging o main
+Si aun no se va a hacer un pr a la rama staging o main
 
 ```bash
     git push
@@ -79,3 +79,15 @@ Comandos para subir versiones tanto en la libreria de stencils como en los wrapp
 ```bash
     npm run major
 ```
+
+Esto realiza el push automatico
+
+## Se agrega el changelog
+
+```bash
+    npm run generateChangelog
+```
+
+Se hace un commit de documentacion y push
+
+Finalmente se hace los pr a staging y luego a main
