@@ -33,7 +33,6 @@ jobs:
             
             
     publish_stencil:
-        runs-on: publishStencil
 
         steps:
             - name: Configure npm for authentication
@@ -49,7 +48,6 @@ jobs:
 
 
     publish_react:
-        runs-on: publishReact
 
         steps:
             - name: Configure npm for authentication
