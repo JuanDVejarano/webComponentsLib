@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v0.1.7
+- 2024-08-29 - v0.1.7 (aa1c2c7)
+- 2024-08-29 - fix(React): :rotating_light: Arreglo bug vite
+
+Se arregla un bug en vite (dec9afa)
+- 2024-08-29 - docs(Global): :memo: Add Doc InstruccionesTecnicas
+
+Se agrega un documento .md para ver las intruccione stecnicas del proyecto y como correrlo y publicarlo (bd52f00)
+- 2024-08-07 - docs(Global): :memo: Documentacion del uso de la libreria
+
+Se documenta instalacion en vanilla y uso de botones, estructura del README.md (4d5de4c)
+
 ## v0.1.6
 - 2024-08-07 - v0.1.6 (3d9b3ed)
 - 2024-08-07 - docs(Global): :memo: Agregar change logs
