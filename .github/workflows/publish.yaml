@@ -51,6 +51,9 @@ jobs:
             - name: Install dependencies Global
               run: npm ci
 
+            - name: build general
+              run: npm run build
+
             - name: Build React library
               run: |
                   cd packages/react-library
