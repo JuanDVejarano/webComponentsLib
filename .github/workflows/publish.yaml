@@ -38,6 +38,9 @@ jobs:
             - name: Configure npm for authentication
               run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
+            - name: List directories
+              run: ls -R
+
             - name: Publish Stencil library to npm
               run: |
                   cd packages/stencil-library
