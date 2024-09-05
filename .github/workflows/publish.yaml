@@ -51,8 +51,10 @@ jobs:
             - name: Install dependencies Global
               run: npm ci
 
-            - name: build general
-              run: npm run build
+            - name: Build Stencil library
+              run: |
+                  cd packages/stencil-library
+                  npm run build
 
             - name: Build React library
               run: |
