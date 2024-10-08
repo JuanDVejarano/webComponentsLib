@@ -26,6 +26,7 @@ export class LibButton {
 
   selectionClass() {
     let varClass: string = '';
+    console.log('btnType', this.btnType);
     switch (this.btnType) {
       case 'primary':
         varClass = 'btnPrimary';
